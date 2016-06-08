@@ -1,7 +1,6 @@
 language: python
 os:
 - linux
-- osx
 env:
   global:
   - PATH=$PATH:/tmp/bin
