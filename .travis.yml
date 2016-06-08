@@ -17,6 +17,8 @@ services:
 - docker
 before install:
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
+- git pull https://github.com/DivvyCloud/QuickStart.git
+- docker-compose up   
 install:
 - if [ -n "$REMOTE_ARG" ]; then wget http://selenium.googlecode.com/files/selenium-server-standalone-2.26.0.jar
   -O selenium-server.jar; fi
