@@ -9,7 +9,6 @@ env:
   - secure: W5vbS87sPIiIk5oQkry8bWklcA0Lb5wS2ZGB0p6TGLbINcXwWKQ0HC7UgJny/74sovGuT3gIKfaAGYhf1P2kbZmN1kBE5ItlAcp55jfRbck7sgZKQ6spc3wa32iR/2Na3WxOumeAYv6mIFbB+PE1htcYvTjUMhGLWCJExSawUafzJBZLkqf3YKNfK63DOhqaf8bqiTNbybCWBnJ/JkI43xoClceEE3au+0+xvLgX0T5sY2ZodTCghkgs23GO5RMjHZvtQOTLNW1xz9qmQ6c8d3Cw1Fsa64ijBXJURFWBhs0TM2AfBJ6uj6vvcwq3rzXfcIbr3L9UpQ6ZjWUUfveu0toUhRpsRXFtCjQcziFYdkT++QhrFxJgI8dFNF8NXoBvLFYAl6S3NGEICAPO6/+CxZbdkdPIvhqExzXw9LToH5HrqBZQ8WIl+Xs7bKkw9GlSPpwC928CflSS+h6J8uGq5/4hFKu4gaW546jbwe3gRo+8diQ9R80P6cBsl1+Qda2e+U8+AMPf0i9vAS80qAvI8zvZLuFBjCk306KIjVSPgqtSz5fqvnFm/RLjDth62ypNPbQqoVgcxYydHQQo2ov4CsF07Si7N0i76soGKOwuPPCGR83u+Tpy8WJF8R5mjArnOiJYO8LDqcauBmgQwHlmy+gKVTBYPFP75vsUL6eLSOY=
   matrix:
   - BROWSER=firefox
-  - REMOTE_ARG='--remote-url http://127.0.0.1:8080/#/' BROWSER=firefox
 python:
 - '2.7'
 services:
@@ -20,7 +19,7 @@ install:
 - if [ -n "$REMOTE_ARG" ]; then wget http://selenium.googlecode.com/files/selenium-server-standalone-2.26.0.jar
   -O selenium-server.jar; fi
 - git pull https://github.com/DivvyCloud/QuickStart.git
-- docker-compose up
+- docker-compose up -d
 before_script:
 - pip install -r requirements.txt
 - export DISPLAY=:99.0
