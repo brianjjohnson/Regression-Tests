@@ -18,7 +18,8 @@ before install:
 install:
 - if [ -n "$REMOTE_ARG" ]; then wget http://selenium.googlecode.com/files/selenium-server-standalone-2.26.0.jar
   -O selenium-server.jar; fi
-- git pull https://github.com/DivvyCloud/QuickStart.git
+- wget https://github.com/brianjjohnson/Regression-Tests/archive/master.zip
+- tar -xvf master.zip
 - docker-compose up -d
 before_script:
 - pip install -r requirements.txt
