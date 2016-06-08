@@ -19,7 +19,7 @@ install:
 - if [ -n "$REMOTE_ARG" ]; then wget http://selenium.googlecode.com/files/selenium-server-standalone-2.26.0.jar
   -O selenium-server.jar; fi
 - wget https://github.com/brianjjohnson/Regression-Tests/archive/master.zip
-- tar -xvf master.zip
+- unzip master.zip
 - docker-compose up -d
 before_script:
 - pip install -r requirements.txt
