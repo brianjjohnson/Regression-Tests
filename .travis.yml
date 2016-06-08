@@ -4,8 +4,8 @@ env:
     - PATH=$PATH:/tmp/bin
   matrix:
     - BROWSER=firefox
-    - BROWSER=chrome
     - REMOTE_ARG='--remote-url http://127.0.0.1:8080/#/' BROWSER=firefox
+
 python:
   - "2.7"
 services:
