@@ -18,9 +18,8 @@ before install:
 install:
 - if [ -n "$REMOTE_ARG" ]; then wget http://selenium.googlecode.com/files/selenium-server-standalone-2.26.0.jar
   -O selenium-server.jar; fi
-- wget https://github.com/DivvyCloud/QuickStart/archive/master.zip
-- unzip master.zip
-- (cd QuickStart-master/ && docker-compose up -d)
+- git clone --depth=50 --branch=master https://github.com/DivvyCloud/QuickStart.git
+- (cd QuickStart/ && docker-compose up -d)
 before_script:
 - pip install -r requirements.txt
 - export DISPLAY=:99.0
